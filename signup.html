@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>회원가입 | 굿즈샵</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">굿즈샵</a>
+      <nav id="nav"></nav>
+    </div>
+  </header>
+  <main>
+    <div class="box">
+      <h1>회원가입</h1>
+      <form id="signup-form">
+        <label for="email">이메일</label>
+        <input id="email" type="email" required autocomplete="email" />
+        <label for="password">비밀번호 (6자 이상)</label>
+        <input id="password" type="password" required minlength="6" autocomplete="new-password" />
+        <label for="password2">비밀번호 확인</label>
+        <input id="password2" type="password" required minlength="6" autocomplete="new-password" />
+        <button class="btn" type="submit">가입하기</button>
+        <p class="msg" id="msg"></p>
+      </form>
+      <p class="center muted">이미 계정이 있나요? <a href="login.html">로그인</a></p>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/signup.js"></script>
+</body>
+</html>

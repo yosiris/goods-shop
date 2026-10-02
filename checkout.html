@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>결제하기 | 굿즈샵</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">굿즈샵</a>
+      <nav id="nav"></nav>
+    </div>
+  </header>
+  <main>
+    <div class="box wide">
+      <h1>결제하기</h1>
+      <div class="notice">테스트 결제예요. 실제로 돈이 나가지 않아요.</div>
+      <div id="order-info" class="muted">주문서를 만드는 중...</div>
+      <div id="payment-method"></div>
+      <div id="agreement"></div>
+      <button class="btn" id="pay-btn" disabled>결제하기</button>
+      <p class="msg" id="msg"></p>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://js.tosspayments.com/v2/standard"></script>
+  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

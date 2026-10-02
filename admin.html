@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>관리자 | 굿즈샵</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">굿즈샵</a>
+      <nav id="nav"></nav>
+    </div>
+  </header>
+  <main>
+    <h1>전체 결제 내역 (관리자)</h1>
+    <p id="summary" class="muted"></p>
+    <div id="orders" class="table-wrap"><p class="muted" style="padding:12px">불러오는 중...</p></div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
