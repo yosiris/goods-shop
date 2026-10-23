@@ -29,13 +29,13 @@
       <tbody>${data
         .map(
           (o) => `<tr>
-            <td>${dateText(o.created_at)}</td>
-            <td>${escapeHtml(o.user_email)}</td>
-            <td>${escapeHtml(o.product_name)}</td>
-            <td>${won(o.amount)}</td>
-            <td>${statusBadge(o.status)}</td>
-            <td>${escapeHtml(o.method || "-")}</td>
-            <td>${dateText(o.paid_at)}</td>
+            <td data-label="주문일시">${dateText(o.created_at)}</td>
+            <td data-label="회원">${escapeHtml(o.user_email)}</td>
+            <td data-label="상품">${escapeHtml(o.product_name)}</td>
+            <td data-label="금액">${won(o.amount)}</td>
+            <td data-label="상태">${statusBadge(o.status)}</td>
+            <td data-label="결제수단">${escapeHtml(o.method || "-")}</td>
+            <td data-label="결제일시">${dateText(o.paid_at)}</td>
           </tr>`
         )
         .join("")}</tbody>

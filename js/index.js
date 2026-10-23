@@ -10,7 +10,7 @@
     .map(
       (p) => `
       <div class="card">
-        <img src="${escapeHtml(p.image_url)}" alt="${escapeHtml(p.name)}" />
+        <img src="${escapeHtml(p.image_url)}" alt="${escapeHtml(p.name)}" loading="lazy" />
         <div class="card-body">
           <h3>${escapeHtml(p.name)}</h3>
           <p>${escapeHtml(p.description)}</p>
