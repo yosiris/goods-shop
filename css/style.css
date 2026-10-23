@@ -178,6 +178,7 @@ td::before { content: attr(data-label); color: var(--muted); text-align: left; f
 .badge-failed { background: #fde7e7; color: #b42318; }
 
 .summary { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.summary span { flex-shrink: 0; }
 .summary strong { text-align: right; }
 .notice { background: #eef1ff; border-radius: 8px; padding: 10px 12px; font-size: 14px; color: var(--primary-dark); margin-bottom: 16px; }
 
