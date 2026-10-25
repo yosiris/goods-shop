@@ -9,6 +9,9 @@
   --primary-dark: #2a41c9;
   --danger: #e53935;
   --tap: 48px; /* 손가락으로 누르기 좋은 최소 높이 */
+  /* 좌우 여백: 기본 16px, 휴대폰을 가로로 돌려 노치가 옆에 오면 그만큼 더 */
+  --side-l: max(16px, env(safe-area-inset-left));
+  --side-r: max(16px, env(safe-area-inset-right));
 }
 
 * { box-sizing: border-box; }
@@ -32,12 +35,13 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
+  padding-top: env(safe-area-inset-top); /* 노치(화면 위 카메라 자리)에 가리지 않게 */
 }
 
 .header-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 8px 16px 0;
+  padding: 8px var(--side-r) 0 var(--side-l);
 }
 
 .logo {
@@ -73,7 +77,11 @@ header {
 #nav a:hover { color: var(--primary); }
 .nav-user { display: none; color: var(--muted); font-size: 14px; padding: 0 10px; }
 
-main { max-width: 1100px; margin: 0 auto; padding: 20px 16px 60px; }
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px var(--side-r) calc(60px + env(safe-area-inset-bottom)) var(--side-l);
+}
 
 h1 { font-size: 22px; margin: 0 0 16px; }
 
@@ -180,6 +188,26 @@ td::before { content: attr(data-label); color: var(--muted); text-align: left; f
 .summary { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
 .summary span { flex-shrink: 0; }
 .summary strong { text-align: right; }
+/* 홈 화면에 추가 안내 (휴대폰 첫 방문, 화면 맨 아래) */
+.install-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px var(--side-r) calc(8px + env(safe-area-inset-bottom)) var(--side-l);
+  background: var(--card);
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+}
+.install-bar span { flex: 1; }
+.install-bar .btn { width: auto; padding: 0 16px; }
+.install-bar .link-btn { min-height: var(--tap); padding: 0 8px; }
+
 .notice { background: #eef1ff; border-radius: 8px; padding: 10px 12px; font-size: 14px; color: var(--primary-dark); margin-bottom: 16px; }
 
 /* 태블릿 이상 */
@@ -189,11 +217,11 @@ td::before { content: attr(data-label); color: var(--muted); text-align: left; f
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    padding: 8px 16px;
+    padding: 8px var(--side-r) 8px var(--side-l);
   }
   #nav { margin: 0; }
   .nav-user { display: inline; }
-  main { padding: 28px 16px 60px; }
+  main { padding-top: 28px; }
   h1 { font-size: 26px; margin-bottom: 20px; }
   .grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .card-body { padding: 14px; }
