@@ -1,6 +1,6 @@
 // 서비스 워커: 방문한 페이지와 CSS/JS 를 저장해 두었다가 인터넷이 끊기면 대신 보여줌
 // ※ CSS/JS/HTML 을 고치면 아래 버전 숫자를 하나 올려야 휴대폰에 새 파일이 반영됨
-const CACHE = "goods-shop-v1";
+const CACHE = "goods-shop-v2";
 
 // 처음 설치할 때 미리 저장해 둘 파일
 const PRECACHE = [

@@ -85,6 +85,21 @@ main {
 
 h1 { font-size: 22px; margin: 0 0 16px; }
 
+/* 상품 페이지 맨 위 소개 영역 */
+.hero {
+  background: linear-gradient(135deg, var(--primary), #7c4dff);
+  color: #fff;
+  border-radius: 16px;
+  padding: 28px 20px;
+  margin-bottom: 28px;
+}
+.hero-eyebrow { margin: 0 0 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; opacity: 0.8; }
+.hero-title { margin: 0 0 10px; font-size: 24px; font-weight: 800; line-height: 1.35; }
+.hero-text { margin: 0 0 20px; font-size: 15px; opacity: 0.9; }
+.hero-btn { background: #fff; color: var(--primary); }
+.hero-btn:hover { background: #eef1ff; }
+#list { scroll-margin-top: 110px; } /* 버튼으로 내려왔을 때 위에 붙은 메뉴에 가리지 않게 */
+
 /* 상품 목록: 휴대폰 2칸 → 태블릿 3칸 → PC 4칸 */
 .grid {
   display: grid;
@@ -223,6 +238,11 @@ td::before { content: attr(data-label); color: var(--muted); text-align: left; f
   .nav-user { display: inline; }
   main { padding-top: 28px; }
   h1 { font-size: 26px; margin-bottom: 20px; }
+  .hero { padding: 48px 40px; margin-bottom: 36px; }
+  .hero-title { font-size: 34px; }
+  .hero-text { font-size: 17px; max-width: 520px; }
+  .hero-btn { width: auto; padding: 10px 28px; }
+  #list { scroll-margin-top: 80px; }
   .grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .card-body { padding: 14px; }
   .card-body h3 { font-size: 16px; }
